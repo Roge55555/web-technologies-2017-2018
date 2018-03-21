@@ -1,0 +1,87 @@
+
+.upp {
+    background-color: rgb(103, 58, 183);
+    color: rgba(100, 0, 4, 1);
+    height: 278px;
+    width: 100%;
+    margin: 0;
+    padding: 0px;
+
+}
+.zapros {
+    font-family: Draft,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    float: right;
+    position: relative;
+    right: 16px;
+    top: 16px;
+    width: auto;
+    height: auto;
+    color: black;
+    background-color: blueviolet;
+    border-radius: 5px;
+    border:saddlebrown;
+    margin:0;
+
+}
+.lun {
+    background-color: rgb(245, 250, 255);
+    color: rgb(0, 0, 0);
+    height: auto;
+    width: 55%;
+    margin: auto;
+    position: relative;
+    top: 66%;
+    ;
+}
+.txt {
+    font-family: Draft, Helvetica, Arial, sans-serif;
+    font-size: 19px;
+    font-weight: bold;
+    margin: 35px;
+    width: auto;
+
+}
+
+.rd {
+    font-family: Draft, Helvetica, Arial, sans-serif;
+    color: #e10000;
+    font-weight: lighter;
+    font-size: 20px;
+    margin: 5px
+}
+.inf{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+}
+.mrg{
+    margin-left: 35px;
+}
+.ln{
+    margin:0;
+    border: 0px;
+    position: relative;
+    top: -62px;
+}
+.frm{
+    position: relative;
+    top: -65px;
+    max-width:640px;
+}
+.footer{
+	position: relative;
+	top: 1230px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: #807e8b;
+	font-size: 14px;
+	font-weight: bold;
+	margin: 0px;
+}
+.kon{
+    position: relative;
+    top: -15px;
+}
