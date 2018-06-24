@@ -1,0 +1,27 @@
+.User{
+    display: flex;
+    flex-direction: column;
+    color: #696969;
+    margin: 20px;
+}
+
+img{
+    height: 200px;
+    width: 200px;
+    border-radius: 8px;
+}
+
+button{
+    color: #696969;
+    background: transparent;
+    margin: 10px;
+    border: none;
+    font-size: medium;
+    outline: none;
+    cursor: pointer;
+}
+
+button:hover {
+    border: 1px solid #1e90ff;
+    border-radius: 10px;
+}
