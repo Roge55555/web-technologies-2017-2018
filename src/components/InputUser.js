@@ -13,9 +13,9 @@ function InputUser(props) {
 
 const mapStateToProps = (state) => {
     return{
-        inputValue: state.inputValue
+        inputValue: state.user.inputValue
     };
-}
+};
 
 const mapDispatchToProps = (dispatch) => {
     return {

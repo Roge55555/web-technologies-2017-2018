@@ -4,9 +4,10 @@ import Icon from './Icon'
 export default function IconDescription(props){
     return(
         <Fragment>
-            <span>
-                <h5>{props.text}</h5>
-            </span>
+            <p>
+                <Icon icon={props.icon}/>
+                 {props.text}
+            </p>
         </Fragment>
     );
 }

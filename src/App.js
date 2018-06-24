@@ -16,7 +16,7 @@ class App extends Component {
                   <section className="user-section">
                       <User />
                   </section>
-                  <section className="tabs-secrion">
+                  <section className="tabs-section">
                       <Tabs />
                   </section>
               </div>

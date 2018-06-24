@@ -1,14 +1,14 @@
 const initialState = {
     inputValue: '',
-    name: '',
-    login: '',
+    name: ' Name',
+    login: ' Login',
     avatar_url: 'https://avatars0.githubusercontent.com/u/5195936?s=460&v=4',
-    location: '',
-    bio: '',
+    location: ' Anywhere',
+    bio: ' just positive person',
     followers_url: ''
 };
 
-const UserReducer = (state = initialState, action) => {
+export default function userReducer(state = initialState, action){
     switch (action.type){
         case 'CHANGE_INPUT':
             return Object.assign({}, state, {inputValue: action.user});
@@ -18,5 +18,3 @@ const UserReducer = (state = initialState, action) => {
             return state;
     }
 };
-
-export default UserReducer;
