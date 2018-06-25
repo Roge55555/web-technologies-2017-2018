@@ -1,14 +1,19 @@
 .User{
-    display: flex;
-    flex-direction: column;
+    display: inline-flex;
     color: #696969;
     margin: 20px;
+    background-color: #fffbf4;
 }
 
 img{
     height: 200px;
     width: 200px;
-    border-radius: 8px;
+    border-radius: 100px;
+
+}
+
+p{
+    margin: 10px;
 }
 
 button{
@@ -19,9 +24,13 @@ button{
     font-size: medium;
     outline: none;
     cursor: pointer;
+    border: 2px solid #000000;
+    border-radius: 10px;
 }
 
 button:hover {
-    border: 1px solid #1e90ff;
+    border: 1px solid #000000;
+    background-color: #000000;
     border-radius: 10px;
+    color: #f5faff;
 }

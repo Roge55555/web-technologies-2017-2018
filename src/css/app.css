@@ -26,16 +26,18 @@
 }
 
 .user-section{
-    width: auto;
+    width: 900px;
 }
 
 .textArea{
     margin: 10px;
     padding: 10px;
     width: 325px;
-    height: 30%;
+    height: 300px;
     border-radius: 10px;
     border-color: #c0c0c0;
+    background-color: #000000;
+    color: #fffbf4;
 }
 
 input{
