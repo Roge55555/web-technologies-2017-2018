@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+.main{
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.tab{
+    color: #696969;
+    background: transparent;
+    margin: 10px;
+    border: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: medium;
+}
+
+.tab:focus{
+    border-bottom: 2px solid #ff4500;
+    outline: none;
+}
+
+.tabs-section{
+    width: auto;
+}
+
+.user-section{
+    width: 900px;
+}
+
+.textArea{
+    margin: 10px;
+    padding: 10px;
+    width: 325px;
+    height: 300px;
+    border-radius: 10px;
+    border-color: #c0c0c0;
+    background-color: #000000;
+    color: #fffbf4;
+}
+
+input{
+    margin-left: 30%;
+    margin-bottom: 50px;
+    width: 35%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #c0c0c0;
+    padding: 3px;
+}
+
