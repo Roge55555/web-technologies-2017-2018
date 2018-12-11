@@ -1,0 +1,17 @@
+<%- include('./index'); %>
+    <div class="container">
+        <h1>secret place for <%= admin %></h1>
+        <div id="users" >
+            <% for(user of allUsers) {%>
+                <div class="user">
+                    <input type="text" class="field" value=<%= user.user_name %> disabled >
+                    <input type="text" class="field" id="task" value=<%= user.user_task %> >
+                    <button class="delete-button" onclick="deleteUser(this)" value=<%= user.user_name %> > X </button>
+                    <button class="delete-button" onclick="save(this)" value=<%= user.user_name %> > save </button>
+                </div>
+            <% } %>
+        </div>
+        <input type="button" class="button" value="exit" onclick="exit()">
+    </div>
+</body>
+</html>
