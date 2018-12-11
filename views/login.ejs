@@ -1,0 +1,14 @@
+<%- include('./index'); %>
+<form class="container" >
+	<h4>your login</h4>
+	<input type="text" class="input-login field" id="login" required>
+	<h4>your password</h4>
+	<input class="input-password field" type="password" id="password" required >
+	<div class="buttons-container">
+			<input type="button" class="button" onclick="signIn()" value="sign in">
+			<input type="button" class="button" onclick="signUp()" value="sign up">
+	</div>
+	<p class="error-hidden" id="error"></p>
+</form>
+</body>
+</html>
