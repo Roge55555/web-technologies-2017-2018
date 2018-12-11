@@ -4,8 +4,8 @@ const constants = require('../constants/constants');
 
 
 module.exports = {
-	admin: (req, res) => {
-        User.findAll().then(all => {
+    admin: (req, res) => {
+        User.find().exec().then(all => {
             res.render('adminPage', {
                 admin: 'admin',
                 allUsers: all
@@ -13,10 +13,11 @@ module.exports = {
         });
     },
     reg: (req, res) => {
-        User.create({
-            user_name: req.query.login,
-            user_password: req.query.password
-        })
+        const user = new User({
+            name: req.query.login,
+            password: req.query.password
+        });
+        user.save()
             .then(user => {
                 res.redirect(constants.HOME_PAGE);
             })
@@ -24,52 +25,46 @@ module.exports = {
                 res.send(err.errors[0].message);
             });
     },
-	login: (req, res) => {
-		res.render('login');
-	},
-	auth: (req, res) => {
-		Admin.find({ 
-			where: { 
-				admin_name: req.query.login,
-				admin_password: req.query.password
-			}
-		})
-		.then( result => {
-			if(result) {
-				res.redirect(constants.ADMIN_PAGE);
-			}else {
-				User.find({
-					where:	{
-						user_name: req.query.login,
-						user_password: req.query.password
-					}
-				})
-				.then(user => {
-					res.render('userPage', {
-						user_name: user.user_name,
-						user_task: user.user_task
-					});
-				})
-				.catch( err => {
-					res.redirect(constants.HOME_PAGE);
-				});
-			}
-		});
-	},
+    login: (req, res) => {
+        res.render('login');
+    },
+    auth: (req, res) => {
+        Admin.findOne({
+            name: req.query.login,
+            password: req.query.password
+        })
+            .exec()
+            .then( result => {
+                if(result) {
+                    res.redirect(constants.ADMIN_PAGE);
+                }else {
+                    User.findOne({
+                        name: req.query.login,
+                        password: req.query.password
+                    })
+                        .exec()
+                        .then(user => {
+                            res.render('userPage', {
+                                user_name: user.name,
+                                user_task: user.task
+                            });
+                        })
+                        .catch( err => {
+                            res.redirect(constants.HOME_PAGE);
+                        });
+                }
+            });
+    },
     save: (req, res) => {
-        User.find({ where: {
-                user_name: req.query.user
-            } })
-            .then(user => {
-                user.update({ user_task: req.query.newTask })
-                    .then(() => res.redirect(constants.ADMIN_PAGE));
-            })
+        User.findOneAndUpdate({ name: req.query.user }, { $set: { task: req.query.newTask } })
+            .exec()
+            .then(() => res.redirect(constants.ADMIN_PAGE))
             .catch(err => {
                 res.send('waaaaaaat?????//');
             });
     },
-	delete: (req, res) => {
-		User.destroy({ where: {user_name: req.query.user } })
-		.then( () => 	res.redirect(constants.ADMIN_PAGE));
-	}
+    delete: (req, res) => {
+        User.deleteOne({ name: req.query.user })
+            .then( () => 	res.redirect(constants.ADMIN_PAGE));
+    }
 };

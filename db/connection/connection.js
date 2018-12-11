@@ -1,15 +1,8 @@
-const Sequelize = require('sequelize');
+const mongoose = require('mongoose');
 
-const connection = new Sequelize('simple_db', 'root', 'password', {
-    dialect: 'mysql'
+mongoose.connect('mongodb://lab4-mongodb:' + process.env.MONGO_ATLAS_PW + '@lab4-mongodb-shard-00-00-w100s.mongodb.net:27017,lab4-mongodb-shard-00-01-w100s.mongodb.net:27017,lab4-mongodb-shard-00-02-w100s.mongodb.net:27017/test?ssl=true&replicaSet=lab4-mongodb-shard-0&authSource=admin&retryWrites=true', {
+    useNewUrlParser: true
 });
 
-connection.sync()
-    .then(function(){
-        console.log('* connection successed');
-    })
-    .catch(function(error){
-        console.log(error);
-    });
 
-module.exports = { connection, Sequelize };
+module.exports = mongoose;

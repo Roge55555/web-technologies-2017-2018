@@ -1,29 +1,17 @@
-const { connection, Sequelize } = require('../connection/connection');
+const mongoose = require('../connection/connection');
 
 
-const Admin = connection.define('admin', {
-    Admin_name: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        validate: {
-            len: [5,10]
-        },
-        unique: {
-            args: true,
-            msg: 'such login already in use!'
-          }
+const adminSchema = mongoose.Schema({
+    name: {
+        type: String,
+        required: true,
+        min: 4,
+        max: 10
     },
-    Admin_password: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        validate: {
-            len: {
-                args: [5,15],
-                msg: 'password should contain 5-15 characters'
-            }
-        }
+    password: {
+        type: String,
+        required: true,
+        min: 5,
+        max: 15
     }
 });
-
-
-module.exports = Admin;

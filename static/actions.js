@@ -1,6 +1,6 @@
 function save(button, user = button.value){
-
-	window.location = '/save?newTask=' + button.parentNode.querySelector('#task').value + '&user=' + user;
+    let newTask = button.parentNode.querySelector('#task').value;
+	window.location = '/save?newTask=' + newTask + '&user=' + user;
 }
 
 function deleteUser(button, user = button.value) {
