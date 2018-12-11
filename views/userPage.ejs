@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<%- include('./index'); %>
+    <div class="container">
+        <h1>Your task, <%= user_name %></h1>
+        <div id="task">
+            <input disabled type="text" class="field" value=<%= user_task %> >
+        </div>
+        <input type="button" class="button" value="exit" onclick="exit()">
+    </div>
+</body>
+</html>
